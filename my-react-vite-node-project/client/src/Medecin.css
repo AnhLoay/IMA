@@ -10,11 +10,13 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    overflow-y: scroll;
 }
 
 h1 {
     text-align: center;
     margin-top: 20px;
+    transition: color 0.5s, text-shadow 0.5s;
 }
 
 h1:hover {
@@ -34,9 +36,8 @@ h1:hover {
 }
 
 .medecin-card:hover {
-    animation: vibrate 1s linear infinite;
+    transform: scale(1.05); /* Grow the card slightly */
 }
-
 .medecin-image {
     width: 100%;
     height: auto;
