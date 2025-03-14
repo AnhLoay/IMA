@@ -43,8 +43,10 @@ body {
     margin-bottom: 15px;
     border-radius: 5px;
     border: none;
-    background-color: #2c2c54; /* Change this to your desired background color */
-    color: white; /* Optional: Change the text color */
+    /* background-color: #2c2c54; Change this to your desired background color */
+    
+    color: rgb(0, 0, 0);
+    font-size: larger; /* Optional: Change the text color */
   }
   
   

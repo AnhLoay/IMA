@@ -77,12 +77,19 @@
 // };
 
 // export default Login;
-import React, { useState } from "react";
+import * as React from 'react';
+import { useState } from 'react'; // Ajout de l'importation de useState
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css"; // Assurez-vous d'importer le fichier CSS
 
+const options = ["Option 1", "Option 2", "Option 3"]; // Définir les options si nécessaire
+
 const Login = () => {
+  const [value, setValue] = useState(options[0]);
+  const [inputValue, setInputValue] = useState('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -117,14 +124,22 @@ const Login = () => {
       <form onSubmit={handleLogin}>
         <div className="input-group">
           <label>Email </label>
-          
           <input
-            type="text"
+            type="email"
             className="input-field"
+            placeholder='user@example.com'
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
+        <label >Categorie</label>
+        <input list='categorie' name='categorie'  required />
+        
+        <datalist id='categorie'>
+          <option  value="admin"></option>
+          <option  value="passion" select></option>
+          <option value="doctors"></option>
+        </datalist>
         <div className="input-group">
           <label>Mot de passe</label>
           <input
@@ -134,8 +149,7 @@ const Login = () => {
             required
           />
         </div>
-        <input id="submit1" type="submit" value={"S'inscrire"}/>
-
+        <input id="submit1" type="submit" value={"Se connecter"} />
         <div className="options">
           <a href="#" className="forgot-password">Mot de passe oublié ?</a>
         </div>
