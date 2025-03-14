@@ -5,6 +5,7 @@ h2{
     text-shadow: 1px 4px 1px rgb(255, 255, 255);
 }
 table{
+    
     width: 65%;
     border: 3px solid  #07d8ef;
     margin-top: 30px;
@@ -16,9 +17,11 @@ table{
 #horaire{
     background-image: url(/clock.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
     width: 100vw;
     height:100vh;
-    background-size: cover;
+    
 }
 th:hover{
     font-size: 18px;
